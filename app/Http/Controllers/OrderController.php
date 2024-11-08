@@ -47,7 +47,7 @@ class OrderController extends Controller
             
             if($medicines['stock'] < $count) {
                 $msg = "Obat " . $medicines['name'] . " Sisa Stock " . $medicines['stock'] . "tidak dapat melakukan pembelian!";            
-                return redirect()->back()->with('failed', $msg);
+                return redirect()->back()->withInput()->with('failed', $msg);
             }
 
             $arrayItem = [
